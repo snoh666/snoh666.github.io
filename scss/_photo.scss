@@ -1,0 +1,28 @@
+.photo-section{
+  width: 100%;
+  min-height: 900px;
+  padding: 100px;
+  background: #d2dae2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo-container{
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  div{
+    box-flex: auto;
+    flex: auto;
+    width: 300px;
+    margin: .5vw;
+  }
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
