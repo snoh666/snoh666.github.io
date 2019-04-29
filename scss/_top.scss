@@ -1,0 +1,87 @@
+.top {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu{
+  width: 100%;
+  height: 50px;
+  box-sizing: content-box;
+  padding-top: 5px;
+}
+nav {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.menu-list {
+  width: 100%;
+  height: 100%;
+  align-self: end;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.menu-item{
+  padding: 0 10px;
+  border-bottom: 1px solid #d2dae2;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:hover{
+    &::before{
+      top: -50%;
+    }
+  }
+  &::before{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 150%;
+    height: 60px;
+    left: -25%;
+    top: 110%;
+    border-radius: 100%;
+    background-color: #485460;
+    transition: all .6s ease;
+    z-index: -1;
+  }
+}
+h1{
+  letter-spacing: 5px;
+  font-weight: 300;
+  font-size: 50px;
+}
+.scroll{
+  width: 100px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover{
+    span{
+      animation: textScroll .5s alternate forwards;
+    }
+  }
+  span{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all .5s ease;
+  }
+}
+@keyframes textScroll {
+  from{
+    top: 0%;
+  }
+  to{
+    top: 50%;
+  }
+}
