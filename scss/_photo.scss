@@ -5,7 +5,15 @@
   background: #d2dae2;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+  color: black;
+}
+.line{
+  width: 400px;
+  height: 2px;
+  margin: 20px 0;
+  background: black;
 }
 .photo-container{
   width: 90%;
