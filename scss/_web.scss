@@ -1,0 +1,68 @@
+.web{
+  width: 100%;
+  min-height: 1000px;
+  padding: 50px 0 100px;
+  background: #485460;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.web-content{
+  width: 900px;
+  min-height: 700px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+
+  &::-webkit-scrollbar{
+    width: 10px;
+    background-color: #485460;
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: #1e272e;
+  }
+}
+.git-repo{
+  width: 1fr;
+  height: 200px;
+  align-self: center;
+  background: #1e272e7a;
+  transition: all .5s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.repo-name{
+  width: 100%;
+  padding: 5px 10px;
+  text-align: start;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1em;
+}
+.repo-desc{
+  font-size: .8em;
+  width: 90%;
+}
+.repo-lang{
+  width: 100%;
+  padding: 0 10px;
+  text-align: end;
+  font-size: 1em;
+}
+.html{
+  color: #e34c26;
+}
+.javascript{
+  color: #f1e05a;
+}
+.css{
+  color: #563d7c;
+}
+.homepage-active{
+  cursor: pointer;
+  background-color: #1e272e;
+}
