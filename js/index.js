@@ -6,7 +6,6 @@ fetch('https://api.github.com/users/snoh666/repos')
     webContentBox.innerHTML = '';
     data.forEach(element => {
       /*
-        Wrap everything in 'a' link or add click listener
         element =
         name = name of repo
         description = description of repo
@@ -15,9 +14,6 @@ fetch('https://api.github.com/users/snoh666/repos')
         HTML, JAVASCRIPT, CSS
         #e34c26, #f1e05a, #563d7c
       */
-      const linkFunction = function (link) {
-        console.log(link);
-      };
       const repoItems = [document.createElement('div'), document.createElement('div'), document.createElement('div')];
       repoItems[0].setAttribute('class', 'repo-name');
       let repoName = element.name.replace('-', ' ').replace('-', ' ').replace('_', ' ');
