@@ -1,19 +1,18 @@
 .photo-section{
   width: 100%;
   min-height: 900px;
-  padding: 100px;
-  background: #d2dae2;
+  padding: 100px 0;
+  background: #1e272e;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  color: black;
 }
 .line{
   width: 400px;
   height: 2px;
   margin: 20px 0;
-  background: black;
+  background: #d2dae2;
 }
 .photo-container{
   width: 90%;
