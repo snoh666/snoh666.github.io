@@ -4,6 +4,47 @@ document.getElementsByClassName('menu-btn')[0].addEventListener('click', () => {
 document.getElementsByClassName('menu-btn-inside')[0].addEventListener('click', () => {
   document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
 });
+window.addEventListener('scroll', () => {
+  const menuEl = document.getElementById('menu');
+  if(window.scrollY >= 315) {
+    menuEl.classList.add('menu-bg');
+  } else if (window.scrollY < 30) {
+    if(menuEl.classList.contains('menu-bg')) {
+      menuEl.classList.remove('menu-bg');
+    }
+  }
+});
+document.getElementById('menu-scroll').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+  document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
+});
+document.getElementById('github-scroll').addEventListener('click', () => {
+  window.scrollTo({
+    top: document.getElementById('web').offsetTop - 25,
+    left: 0,
+    behavior: 'smooth'
+  });
+  document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
+});
+document.getElementById('jpg-scroll').addEventListener('click', () => {
+  window.scrollTo({
+    top: document.getElementsByClassName('photo-section')[0].offsetTop + 25,
+    left: 0,
+    behavior: 'smooth'
+  });
+  document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
+});
+document.getElementsByClassName('scroll')[0].addEventListener('click', () => {
+  window.scrollTo({
+    top: document.getElementById('web').offsetTop - 25,
+    left: 0,
+    behavior: 'smooth'
+  });
+});
 //Github APi connection
 fetch('https://api.github.com/users/snoh666/repos')
   .then(data => data.json())
