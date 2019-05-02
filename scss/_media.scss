@@ -2,11 +2,17 @@
   .web-content{
     width: 700px;
   }
+  h1 {
+    font-size: 45px;
+  }
 }
 @media screen and (max-width: 767px) {
   .web-content{
     width: 500px;
     grid-template-columns: 1fr;
+  }
+  h1{
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 575px) {
@@ -14,7 +20,7 @@
     width: 90%;
   }
   h1{
-    font-size: 40px;
+    font-size: 35px;
   }
   .line{
     width: 200px;
