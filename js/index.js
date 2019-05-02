@@ -6,7 +6,7 @@ document.getElementsByClassName('menu-btn-inside')[0].addEventListener('click', 
 });
 window.addEventListener('scroll', () => {
   const menuEl = document.getElementById('menu');
-  if(window.scrollY >= 315) {
+  if(window.scrollY >= (window.innerHeight / 6) * 2) {
     menuEl.classList.add('menu-bg');
   } else if (window.scrollY < 30) {
     if(menuEl.classList.contains('menu-bg')) {
@@ -53,15 +53,6 @@ fetch('https://api.github.com/users/snoh666/repos')
     const webContentBox = document.getElementsByClassName('web-content')[0];
     webContentBox.innerHTML = '';
     data.forEach(element => {
-      /*
-        element =
-        name = name of repo
-        description = description of repo
-        homepage = link of homepage repo
-        language = language of repo
-        HTML, JAVASCRIPT, CSS
-        #e34c26, #f1e05a, #563d7c
-      */
       const repoItems = [document.createElement('div'), document.createElement('div'), document.createElement('div')];
       repoItems[0].setAttribute('class', 'repo-name');
       let repoName = element.name.replace('-', ' ').replace('-', ' ').replace('_', ' ');
