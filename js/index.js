@@ -1,3 +1,10 @@
+document.getElementsByClassName('menu-btn')[0].addEventListener('click', () => {
+  document.getElementsByClassName('menu-list')[0].classList.add('menu-list-active');
+});
+document.getElementsByClassName('menu-btn-inside')[0].addEventListener('click', () => {
+  document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
+});
+//Github APi connection
 fetch('https://api.github.com/users/snoh666/repos')
   .then(data => data.json())
   .then(data => {
