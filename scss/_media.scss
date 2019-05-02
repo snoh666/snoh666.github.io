@@ -1,0 +1,28 @@
+@media screen and (max-width: 991px) {
+  .web-content{
+    width: 700px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .web-content{
+    width: 500px;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 575px) {
+  .web-content{
+    width: 90%;
+  }
+  h1{
+    font-size: 40px;
+  }
+  .line{
+    width: 200px;
+  }
+  .git-repo{
+    font-size: 18px;
+  }
+  .menu-list{
+    width: 100%;
+  }
+}
