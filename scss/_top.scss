@@ -64,7 +64,8 @@ nav {
   height: 4px;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 0;
+  margin-left: 10px;
   background: #1e272e;
   transform-origin: 50% 50%;
 }
