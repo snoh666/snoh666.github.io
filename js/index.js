@@ -65,7 +65,6 @@ fetch('https://api.github.com/users/snoh666/repos')
       const repoItems = [document.createElement('div'), document.createElement('div'), document.createElement('div')];
       repoItems[0].setAttribute('class', 'repo-name');
       let repoName = element.name.replace('-', ' ').replace('-', ' ').replace('_', ' ');
-      console.log(repoName);
       repoItems[0].appendChild(document.createTextNode(repoName));
       repoItems[1].setAttribute('class', 'repo-desc');
       repoItems[1].appendChild(document.createTextNode(element.description));
