@@ -15,21 +15,72 @@
 }
 nav {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
 }
-
-.menu-list {
+.menu-btn{
+  width: 30px;
+  height: 30px;
+  justify-self: flex-end;
+  align-self: center;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.menu-btn-line{
   width: 100%;
-  height: 100%;
+  height: 4px;
+  background: #d2dae2;
+}
+.menu-list {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #d2dae2;
+  color: #1e272e;
   align-self: end;
   list-style-type: none;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  padding-top: 50px;
+  transition: all .5s ease;
+  transform-origin: 100% 0%;
+  transform: scaleX(.0);
+}
+.menu-btn-inside{
+  position: absolute;
+  top: 9px;
+  left: 0;
+  justify-content: center;
+}
+.menu-btn-x{
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #1e272e;
+  transform-origin: 50% 50%;
+}
+.menu-btn-x:nth-child(1) {
+  transform: rotate(45deg);
+}
+.menu-btn-x:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.menu-list-active{
+  transform: scaleX(1);
 }
 .menu-item{
-  padding: 0 10px;
+  width: 90%;
+  height: 30px;
+  margin: 20px 0;
   border-bottom: 1px solid #d2dae2;
   cursor: pointer;
   position: relative;
