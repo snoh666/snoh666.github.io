@@ -4,6 +4,13 @@ document.getElementsByClassName('menu-btn')[0].addEventListener('click', () => {
 document.getElementsByClassName('menu-btn-inside')[0].addEventListener('click', () => {
   document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
 });
+document.querySelector('nav > h2').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+});
 window.addEventListener('scroll', () => {
   const menuEl = document.getElementById('menu');
   const placeholderMenu = document.getElementsByClassName('placeholder')[0];
