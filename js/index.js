@@ -6,11 +6,14 @@ document.getElementsByClassName('menu-btn-inside')[0].addEventListener('click', 
 });
 window.addEventListener('scroll', () => {
   const menuEl = document.getElementById('menu');
+  const placeholderMenu = document.getElementsByClassName('placeholder')[0];
   if(window.scrollY >= (window.innerHeight / 6) * 2) {
     menuEl.classList.add('menu-bg');
-  } else if (window.scrollY < 30) {
+    placeholderMenu.classList.remove('display');
+  } else if (window.scrollY == 0) {
     if(menuEl.classList.contains('menu-bg')) {
       menuEl.classList.remove('menu-bg');
+      placeholderMenu.classList.add('display');
     }
   }
 });
