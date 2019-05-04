@@ -15,7 +15,7 @@ h1 {
 .menu{
   width: 100%;
   height: 50px;
-  position: fixed;
+  transform-origin: 0 0;
   box-sizing: content-box;
   padding-top: 5px;
   transition: all .5s ease;
@@ -23,9 +23,9 @@ h1 {
 .menu-bg{
   width: 100%;
   height: 50px;
+  position: fixed;
   color: #485460;
   background-color: #d2dae2;
-  transform-origin: 0 0;
   animation: slideDown .6s ease alternate;
   .menu-btn-line{
     background: #485460;
@@ -41,6 +41,9 @@ h1 {
 }
 .placeholder{
   position: static;
+}
+.display{
+  display: none;
 }
 nav {
   display: grid;
