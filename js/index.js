@@ -79,21 +79,22 @@ fetch('https://api.github.com/users/snoh666/repos')
         repoItems[2].setAttribute('class', 'repo-lang ');
       }
       repoItems[2].appendChild(document.createTextNode(element.language));
-      const mainReposElem = document.createElement('div');
+      let mainReposElem;
+      if (element.homepage === '') {
+        console.warn(`${element.name}: homepage isnt avaible`);
+        mainReposElem = document.createElement('div');
+        mainReposElem.setAttribute('class', `git-repo ${element.name}`);
+      } else {
+        mainReposElem = document.createElement('a');
+        mainReposElem.setAttribute('class', `git-repo ${element.name} homepage-active`);
+        mainReposElem.setAttribute('target', 'blank');
+        mainReposElem.setAttribute('href', element.homepage);
+      }
       repoItems.forEach(element => {
         mainReposElem.appendChild(element);
       });
-      mainReposElem.setAttribute('class', `git-repo ${element.name}`);
-      webContentBox.appendChild(mainReposElem);
-      if(element.homepage === '') {
-        console.warn(`${element.name}: homepage isnt avaible`);
-      } else {
-        const repoElement = document.getElementsByClassName(element.name)[0];
-        repoElement.classList.add('homepage-active');
-        repoElement.addEventListener('click', () => {
-          window.location = element.homepage;
-        });
-      }
+
+      webContentBox.appendChild(document.createElement('a').appendChild(mainReposElem));
     });
 
   });
