@@ -87,7 +87,6 @@ fetch('https://api.github.com/users/snoh666/repos')
       } else {
         mainReposElem = document.createElement('a');
         mainReposElem.setAttribute('class', `git-repo ${element.name} homepage-active`);
-        mainReposElem.setAttribute('target', 'blank');
         mainReposElem.setAttribute('href', element.homepage);
       }
       repoItems.forEach(element => {
