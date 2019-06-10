@@ -32,17 +32,17 @@ document.getElementById('menu-scroll').addEventListener('click', () => {
   });
   document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
 });
-document.getElementById('github-scroll').addEventListener('click', () => {
+document.getElementById('about-scroll').addEventListener('click', () => {
   window.scrollTo({
-    top: document.getElementById('web').offsetTop - 25,
+    top: document.getElementsByClassName('about')[0].offsetTop - 30,
     left: 0,
     behavior: 'smooth'
   });
   document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
 });
-document.getElementById('jpg-scroll').addEventListener('click', () => {
+document.getElementById('github-scroll').addEventListener('click', () => {
   window.scrollTo({
-    top: document.getElementsByClassName('photo-section')[0].offsetTop + 25,
+    top: document.getElementById('web').offsetTop - 25,
     left: 0,
     behavior: 'smooth'
   });
