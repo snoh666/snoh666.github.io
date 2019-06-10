@@ -17,7 +17,14 @@ body{
   justify-content: center;
   align-items: center;
 }
+.line{
+  width: 250px;
+  height: 2px;
+  background: #d2dae2;
+  margin: 20px 0;
+}
 @import '_top.scss';
+@import '_about.scss';
 @import '_contact.scss';
 @import '_web.scss';
 @import '_media.scss';
