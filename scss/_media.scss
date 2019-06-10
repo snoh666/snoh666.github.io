@@ -14,6 +14,12 @@
   h1{
     font-size: 40px;
   }
+  .about{
+    height: 350px;
+  }
+  .about-content {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 575px) {
   .web-content{
@@ -30,5 +36,14 @@
   }
   .menu-list{
     width: 100%;
+  }
+  .contact{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .contact{
+    flex-direction: column;
+    height: 150px;
   }
 }
