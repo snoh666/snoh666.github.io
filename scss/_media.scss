@@ -20,6 +20,12 @@
   .about-content {
     font-size: 18px;
   }
+  .contact{
+    font-size: 18px;
+    a{
+      width: 180px;
+    }
+  }
 }
 @media screen and (max-width: 575px) {
   .web-content{
