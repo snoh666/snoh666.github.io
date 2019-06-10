@@ -48,6 +48,9 @@
   }
 }
 @media screen and (max-width: 370px) {
+  .about{
+    height: 425px;
+  }
   .contact{
     flex-direction: column;
     height: 150px;
