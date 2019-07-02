@@ -65,43 +65,83 @@ fetch('https://api.github.com/users/snoh666/repos')
 
     data.forEach(element => {
       console.log(element);
-      const repoItems = [document.createElement('div'), document.createElement('div'), document.createElement('div')];
-      repoItems[0].setAttribute('class', 'repo-name');
+      const repoItems = {
+        titleElement: document.createElement('div'),
+        descriptionElement: document.createElement('div'),
+        bottomElement: document.createElement('div')
+      };
+
+      repoItems.titleElement.classList =  'repo-name';
+      repoItems.descriptionElement.classList =  'repo-desc';
+      repoItems.bottomElement.classList = 'repo-bottom';
 
       let repoName = element.name;
 
-      repoItems[0].appendChild(document.createTextNode(repoName));
-      repoItems[1].setAttribute('class', 'repo-desc');
-      repoItems[1].appendChild(document.createTextNode(element.description));
+      repoItems.titleElement.appendChild(document.createTextNode(repoName));
+
+      repoItems.descriptionElement.appendChild(document.createTextNode(element.description));
+
+      let detectedLanguage;
 
       if(element.language == 'JavaScript'){
-        repoItems[2].classList = 'repo-lang javascript';
+        detectedLanguage = 'javascript';
       } else if(element.language == 'CSS') {
-        repoItems[2].classList = 'repo-lang css';
+        detectedLanguage = 'css';
       } else if(element.language == 'HTML') {
-        repoItems[2].classList = 'repo-lang html';
+        detectedLanguage = 'html';
       } else {
-        repoItems[2].classList = 'repo-lang';
+        detectedLanguage = '';
       }
 
-      repoItems[2].appendChild(document.createTextNode(element.language));
+      const codeHyperLink = document.createElement('a');
+      codeHyperLink.setAttribute('href', element.html_url);
+      codeHyperLink.append('CODE');
+      codeHyperLink.classList = 'code-link';
+      repoItems.bottomElement.appendChild(codeHyperLink);
+
+      if(element.has_pages) {
+        const siteHyperLink = document.createElement('a');
+        siteHyperLink.setAttribute('href', element.homepage);
+        siteHyperLink.append('SITE');
+        siteHyperLink.classList = 'site-link';
+        repoItems.bottomElement.appendChild(siteHyperLink);
+      }
+
+      const languageElement = document.createElement('span');
+      languageElement.classList = detectedLanguage;
+      languageElement.append(element.language);
+      repoItems.bottomElement.appendChild(languageElement);
+
+
+      // repoItems[2].appendChild(document.createTextNode(element.language));
       let mainReposElem;
+      mainReposElem = document.createElement('div');
+      mainReposElem.appendChild(repoItems.titleElement);
+      mainReposElem.appendChild(repoItems.descriptionElement);
+      mainReposElem.appendChild(repoItems.bottomElement);
+      mainReposElem.setAttribute('class', `git-repo ${element.name}`);
 
-      if (!element.has_pages) {
 
-        console.warn(`${element.name}: homepage isnt avaible`);
-        mainReposElem = document.createElement('div');
-        mainReposElem.setAttribute('class', `git-repo ${element.name}`);
 
-      } else {
+      // if (!element.has_pages) {
 
-        mainReposElem = document.createElement('a');
-        mainReposElem.setAttribute('class', `git-repo ${element.name} homepage-active`);
-        mainReposElem.setAttribute('href', element.homepage);
+      //   console.warn(`${element.name}: homepage isnt avaible`);
+        // mainReposElem = document.createElement('div');
+        // mainReposElem.setAttribute('class', `git-repo ${element.name}`);
+      //   const bottomElementsSection = [document.createElement('a'), document.createElement('div')]
+      //   bottomElementsSection[0].classList = 'git-code';
+      //   bottomElementsSection[1].classList =
 
-      }
+      // } else {
 
-      repoItems.forEach(element => mainReposElem.appendChild(element));
+      //   mainReposElem = document.createElement('div');
+      //   mainReposElem.setAttribute('class', `git-repo ${element.name} homepage-active`);
+      //   const bottomElementsSection = [document.createElement('a'), document.createElement('a'), document.createElement('div')]
+      //   // mainReposElem.setAttribute('href', element.homepage);
+
+      // }
+
+      // repoItems.forEach(element => mainReposElem.appendChild(element));
 
       webContentBox.appendChild(document.createElement('a').appendChild(mainReposElem));
     });
