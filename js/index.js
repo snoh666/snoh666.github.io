@@ -62,10 +62,12 @@ fetch('https://api.github.com/users/snoh666/repos')
 
     const webContentBox = document.getElementsByClassName('web-content')[0];
     webContentBox.innerHTML = '';
+
     data.forEach(element => {
+      console.log(element);
       const repoItems = [document.createElement('div'), document.createElement('div'), document.createElement('div')];
       repoItems[0].setAttribute('class', 'repo-name');
-      let repoName = element.name.replace('-', ' ').replace('-', ' ').replace('_', ' ');
+      let repoName = element.name;
       repoItems[0].appendChild(document.createTextNode(repoName));
       repoItems[1].setAttribute('class', 'repo-desc');
       repoItems[1].appendChild(document.createTextNode(element.description));
@@ -80,7 +82,7 @@ fetch('https://api.github.com/users/snoh666/repos')
       }
       repoItems[2].appendChild(document.createTextNode(element.language));
       let mainReposElem;
-      if (element.homepage === '') {
+      if (!element.has_pages) {
         console.warn(`${element.name}: homepage isnt avaible`);
         mainReposElem = document.createElement('div');
         mainReposElem.setAttribute('class', `git-repo ${element.name}`);
