@@ -67,33 +67,41 @@ fetch('https://api.github.com/users/snoh666/repos')
       console.log(element);
       const repoItems = [document.createElement('div'), document.createElement('div'), document.createElement('div')];
       repoItems[0].setAttribute('class', 'repo-name');
+
       let repoName = element.name;
+
       repoItems[0].appendChild(document.createTextNode(repoName));
       repoItems[1].setAttribute('class', 'repo-desc');
       repoItems[1].appendChild(document.createTextNode(element.description));
+
       if(element.language == 'JavaScript'){
-        repoItems[2].setAttribute('class', 'repo-lang javascript');
+        repoItems[2].classList = 'repo-lang javascript';
       } else if(element.language == 'CSS') {
-        repoItems[2].setAttribute('class', 'repo-lang css');
+        repoItems[2].classList = 'repo-lang css';
       } else if(element.language == 'HTML') {
-        repoItems[2].setAttribute('class', 'repo-lang html');
+        repoItems[2].classList = 'repo-lang html';
       } else {
-        repoItems[2].setAttribute('class', 'repo-lang ');
+        repoItems[2].classList = 'repo-lang';
       }
+
       repoItems[2].appendChild(document.createTextNode(element.language));
       let mainReposElem;
+
       if (!element.has_pages) {
+
         console.warn(`${element.name}: homepage isnt avaible`);
         mainReposElem = document.createElement('div');
         mainReposElem.setAttribute('class', `git-repo ${element.name}`);
+
       } else {
+
         mainReposElem = document.createElement('a');
         mainReposElem.setAttribute('class', `git-repo ${element.name} homepage-active`);
         mainReposElem.setAttribute('href', element.homepage);
+
       }
-      repoItems.forEach(element => {
-        mainReposElem.appendChild(element);
-      });
+
+      repoItems.forEach(element => mainReposElem.appendChild(element));
 
       webContentBox.appendChild(document.createElement('a').appendChild(mainReposElem));
     });
