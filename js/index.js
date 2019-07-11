@@ -64,7 +64,6 @@ fetch('https://api.github.com/users/snoh666/repos')
     webContentBox.innerHTML = '';
 
     data.forEach(element => {
-      console.log(element);
       const repoItems = {
         titleElement: document.createElement('div'),
         descriptionElement: document.createElement('div'),
@@ -82,16 +81,35 @@ fetch('https://api.github.com/users/snoh666/repos')
       repoItems.descriptionElement.appendChild(document.createTextNode(element.description));
 
       let detectedLanguage;
+      console.log(element.language);
 
-      if(element.language == 'JavaScript'){
-        detectedLanguage = 'javascript';
-      } else if(element.language == 'CSS') {
-        detectedLanguage = 'css';
-      } else if(element.language == 'HTML') {
-        detectedLanguage = 'html';
-      } else {
-        detectedLanguage = '';
+      switch(element.language){
+        case 'JavaScript':
+          detectedLanguage = 'javascript';
+          break;
+        case 'CSS':
+          detectedLanguage = 'css'
+          break;
+        case 'HTML':
+          detectedLanguage = 'html';
+          break;
+        case 'Python':
+          detectedLanguage = 'python';
+          break;
+        default:
+          detectedLanguage = '';
+          break;
       }
+
+      // if(element.language == 'JavaScript'){
+      //   detectedLanguage = 'javascript';
+      // } else if(element.language == c) {
+      //   detectedLanguage = 'css';
+      // } else if(element.language == 'HTML') {
+      //   detectedLanguage = 'html';
+      // } else {
+      //   detectedLanguage = '';
+      // }
 
       const codeHyperLink = document.createElement('a');
       codeHyperLink.setAttribute('href', element.html_url);
