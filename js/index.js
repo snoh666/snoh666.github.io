@@ -101,16 +101,6 @@ fetch('https://api.github.com/users/snoh666/repos')
           break;
       }
 
-      // if(element.language == 'JavaScript'){
-      //   detectedLanguage = 'javascript';
-      // } else if(element.language == c) {
-      //   detectedLanguage = 'css';
-      // } else if(element.language == 'HTML') {
-      //   detectedLanguage = 'html';
-      // } else {
-      //   detectedLanguage = '';
-      // }
-
       const codeHyperLink = document.createElement('a');
       codeHyperLink.setAttribute('href', element.html_url);
       codeHyperLink.append('CODE');
