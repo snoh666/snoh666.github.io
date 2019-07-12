@@ -1,14 +1,50 @@
 .contact{
   width: 100%;
-  height: 75px;
-  background: #d2dae2;
+  height: 200px;
+  position: relative;
+  background: #1e272e;
   display: flex;
   flex-direction: row;
+  font-size: 18px;
+  a{
+    z-index: 2;
+    color: #d2dae2;
+  }
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    bottom: 0;
+    left: -55px;
+    z-index: 1;
+    transform: skew(30deg);
+    background: #d2dae2;
+  }
+}
+.contact-header{
+  width: 50%;
+  height: 100%;
+  padding: 5px 80px 5px 5px;
+  z-index: 2;
+  color: #1e272e;
+  font-size: 1em;
+  h2{
+    font-size: 2em;
+    margin: 10px 0;
+  }
+}
+.contact-links{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  a{
-    color: #1e272e;
-    width: 200px;
-    text-decoration: underline;
-  }
+  font-size: 1em;
+}
+.link{
+  width: 200px;
+  text-decoration: underline;
 }
