@@ -2,11 +2,15 @@
   width: 100%;
   height: 300px;
   padding: 20px 0;
-  background: #485460;
   display: flex;
+  background: #d2dae2;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  color: #485460;
+  .line{
+    background: #485460;
+  }
 }
 .about-content{
   width: 75%;
