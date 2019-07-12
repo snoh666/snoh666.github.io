@@ -50,7 +50,7 @@ document.getElementById('github-scroll').addEventListener('click', () => {
 });
 document.getElementsByClassName('scroll')[0].addEventListener('click', () => {
   window.scrollTo({
-    top: document.getElementById('web').offsetTop - 25,
+    top: document.getElementsByClassName('about')[0].offsetTop - 30,
     left: 0,
     behavior: 'smooth'
   });
