@@ -81,7 +81,6 @@ fetch('https://api.github.com/users/snoh666/repos')
       repoItems.descriptionElement.appendChild(document.createTextNode(element.description));
 
       let detectedLanguage;
-      console.log(element.language);
 
       switch(element.language){
         case 'JavaScript':
