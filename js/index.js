@@ -55,6 +55,15 @@ document.getElementById('github-scroll').addEventListener('click', () => {
   document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
 });
 
+document.getElementById('contact-scroll').addEventListener('click', () => {
+  window.scrollTo({
+    top: document.getElementsByClassName('contact')[0].offsetTop - 30,
+    left: 0,
+    behavior: 'smooth'
+  });
+  document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
+});
+
 document.getElementsByClassName('scroll')[0].addEventListener('click', () => {
   window.scrollTo({
     top: document.getElementsByClassName('about')[0].offsetTop - 30,
