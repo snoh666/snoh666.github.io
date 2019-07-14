@@ -1,9 +1,11 @@
 document.getElementsByClassName('menu-btn')[0].addEventListener('click', () => {
   document.getElementsByClassName('menu-list')[0].classList.add('menu-list-active');
 });
+
 document.getElementsByClassName('menu-btn-inside')[0].addEventListener('click', () => {
   document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
 });
+
 document.querySelector('nav > h2').addEventListener('click', () => {
   window.scrollTo({
     top: 0,
@@ -11,6 +13,7 @@ document.querySelector('nav > h2').addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
 window.addEventListener('scroll', () => {
   const menuEl = document.getElementById('menu');
   const placeholderMenu = document.getElementsByClassName('placeholder')[0];
@@ -24,6 +27,7 @@ window.addEventListener('scroll', () => {
     }
   }
 });
+
 document.getElementById('menu-scroll').addEventListener('click', () => {
   window.scrollTo({
     top: 0,
@@ -32,6 +36,7 @@ document.getElementById('menu-scroll').addEventListener('click', () => {
   });
   document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
 });
+
 document.getElementById('about-scroll').addEventListener('click', () => {
   window.scrollTo({
     top: document.getElementsByClassName('about')[0].offsetTop - 30,
@@ -40,6 +45,7 @@ document.getElementById('about-scroll').addEventListener('click', () => {
   });
   document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
 });
+
 document.getElementById('github-scroll').addEventListener('click', () => {
   window.scrollTo({
     top: document.getElementById('web').offsetTop - 25,
@@ -48,6 +54,7 @@ document.getElementById('github-scroll').addEventListener('click', () => {
   });
   document.getElementsByClassName('menu-list')[0].classList.remove('menu-list-active');
 });
+
 document.getElementsByClassName('scroll')[0].addEventListener('click', () => {
   window.scrollTo({
     top: document.getElementsByClassName('about')[0].offsetTop - 30,
@@ -55,6 +62,7 @@ document.getElementsByClassName('scroll')[0].addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
 //Github APi connection
 fetch('https://api.github.com/users/snoh666/repos')
   .then(data => data.json())
