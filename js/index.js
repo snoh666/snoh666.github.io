@@ -119,6 +119,7 @@ fetch('https://api.github.com/users/snoh666/repos')
 
       const codeHyperLink = document.createElement('a');
       codeHyperLink.setAttribute('href', element.html_url);
+      codeHyperLink.setAttribute('target', '_blank');
       codeHyperLink.append('CODE');
       codeHyperLink.classList = 'code-link';
       repoItems.bottomElement.appendChild(codeHyperLink);
@@ -126,6 +127,7 @@ fetch('https://api.github.com/users/snoh666/repos')
       if(element.has_pages) {
         const siteHyperLink = document.createElement('a');
         siteHyperLink.setAttribute('href', element.homepage);
+        siteHyperLink.setAttribute('target', '_blank');
         siteHyperLink.append('SITE');
         siteHyperLink.classList = 'site-link';
         repoItems.bottomElement.appendChild(siteHyperLink);
