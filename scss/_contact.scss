@@ -9,6 +9,10 @@
   a{
     z-index: 2;
     color: #d2dae2;
+    transition: color .3s linear;
+  }
+  a:hover{
+    color: #00b894;
   }
   &::after{
     content: '';
