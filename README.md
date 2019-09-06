@@ -1,4 +1,4 @@
-# snoh666.github.io
+# Portfolio and web apps navigaton
 
 Mainly created for navigation beetwen ma all web apps and their homepages but later on convert it to some kind of portfolio web site with contact and everything else. I wasnt mean to be portfiolio but it came out as it came out.
 
