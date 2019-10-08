@@ -127,6 +127,8 @@ input#search-input{
   border-bottom: 1px solid;
   color: #d2dae2;
   font-size: .8em;
+    font-family: 'Rubik',
+    sans-serif;
 
   position: absolute;
   &:focus + label{
