@@ -72,6 +72,8 @@ document.getElementsByClassName('scroll')[0].addEventListener('click', () => {
   });
 });
 
+const allRepoElements = [];
+
 //Github APi connection
 fetch('https://api.github.com/users/snoh666/repos')
   .then(data => data.json())
@@ -148,6 +150,27 @@ fetch('https://api.github.com/users/snoh666/repos')
       mainReposElem.setAttribute('id', element.name)
 
       webContentBox.appendChild(document.createElement('a').appendChild(mainReposElem));
+      allRepoElements.push(mainReposElem);
     });
 
   });
+
+
+  // Search bar section ===============
+  document.getElementById('search-input').addEventListener('input', e => {
+
+    const webContent = document.querySelector('.web-content');
+    webContent.innerHTML = '';
+    const inputedValue = e.target.value.toLowerCase();
+
+    allRepoElements.forEach(el => {
+
+      const { id } = el;
+      const language = el.querySelector('.repo-bottom > span').innerHTML.toLowerCase();
+
+      if (id.toLowerCase().includes(inputedValue) || language.includes(inputedValue)) {
+        webContent.appendChild(document.createElement('a').appendChild(el));
+      }
+    });
+
+  })
