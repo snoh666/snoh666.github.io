@@ -93,3 +93,20 @@ a{
   text-decoration: none;
   color: #d2dae2;
 }
+
+.search-bar{
+  padding: 10px 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: .8em;
+}
+
+input#search-input{
+  background: none;
+  width: 100%;
+  margin: 10px 0;
+  padding: .2em .5em;
+  border: 1px solid;
+}
