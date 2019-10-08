@@ -17,6 +17,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+  grid-auto-rows: 200px;
 
   &::-webkit-scrollbar{
     width: 10px;
