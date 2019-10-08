@@ -1,10 +1,13 @@
-# snoh666.github.io
-### About
-  Created for fast navigation beetwen homepages of every web repository on my github profile and also to have place to put my photos (grid bottom) 😄.
-### Technologies
+# Portfolio and web apps navigaton
+
+Mainly created for navigation beetwen ma all web apps and their homepages but later on convert it to some kind of portfolio web site with contact and everything else. I wasnt mean to be portfiolio but it came out as it came out.
+
+## Technologies
   - flexbox
   - grid
   - es6+
   - Github API
   - SASS
   - HTML 5
+  
+  I was trying using schemantic html but left it after some problems. To fixed in close future..
