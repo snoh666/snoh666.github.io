@@ -144,7 +144,8 @@ fetch('https://api.github.com/users/snoh666/repos')
       mainReposElem.appendChild(repoItems.titleElement);
       mainReposElem.appendChild(repoItems.descriptionElement);
       mainReposElem.appendChild(repoItems.bottomElement);
-      mainReposElem.setAttribute('class', `git-repo ${element.name}`);
+      mainReposElem.setAttribute('class', `git-repo`);
+      mainReposElem.setAttribute('id', element.name)
 
       webContentBox.appendChild(document.createElement('a').appendChild(mainReposElem));
     });
