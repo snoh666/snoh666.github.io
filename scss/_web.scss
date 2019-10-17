@@ -112,7 +112,7 @@ a{
     left: .25em;
     text-align: start;
     color: darken(#d2dae2, 20%);
-    transition: top .4s ease-in-out, left .4s ease-in-out;
+    transition: top .4s ease-in-out, left .4s ease-in-out, transform .4s ease-in-out;
   }
 }
 
@@ -134,9 +134,11 @@ input#search-input{
   &:focus + label{
     top: 15%;
     left: .1em;
+    transform: scale(.8) translateX(-20%);
   }
   &:not(:placeholder-shown) + label{
     top: 15%;
     left: .1em;
+    transform: scale(.8) translateX(-20%);
   }
 }
