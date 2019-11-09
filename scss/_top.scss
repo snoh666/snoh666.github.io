@@ -5,7 +5,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: #1e272e;
+  background: image-set(url('../jpg/comp-bg.jpg') 4x, url('../jpg/comp-bg@0\,75x.jpg') 3x, url('../jpg/comp-bg@0\,5x.jpg') 2x, url('../jpg/comp-bg@0\,25x.jpg') 1x );
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: black;
 }
 h1 {
   letter-spacing: 5px;
@@ -70,7 +74,7 @@ nav {
 .menu-btn-line{
   width: 100%;
   height: 4px;
-  background: #d2dae2;
+  background: black;
 }
 .menu-list {
   width: 300px;
@@ -148,27 +152,28 @@ nav {
 .scroll{
   width: 100px;
   height: 50px;
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 2.5vh;
   cursor: pointer;
+  animation: moveScroll 1s ease-in-out infinite;
   &:hover{
-    span{
-      animation: textScroll .5s alternate forwards;
-    }
-  }
-  span{
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    transition: all .5s ease;
+    animation-play-state: paused;
   }
 }
-@keyframes textScroll {
-  from{
-    top: 0%;
+
+@keyframes moveScroll {
+  0%{
+    transform: translateY(0);
   }
-  to{
-    top: 50%;
+  25%{
+    transform: translateY(25%);
+  }
+  50%{
+    transform: translateY(0%);
+  }
+  25%{
+    transform: translateY(-25%);
+  }
+  90% {
+    transform: translateY(0);
   }
 }
